@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## Project 2 - DATS 6103 Data Mining
 
-You can use the [editor on GitHub](https://github.com/e-roberts/eroberts22-project2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Preliminary Research
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The fundraising industry in the United States is an increasingly data-driven field. Over the last few years, universities, advocacy groups, health care organizations, arts institutions, and other non-profit organizations across the country have been hiring data scientists to provide insights on their fundraising operations. Adopting analytics on a large scale has the potential to dramatically improve the operations of any institution, but particularly non-profit organizations. Already, some institutions have done tremendous work analyzing their donor base, implementing real-time data dashboards, and using projection analysis to predict year-end fundraising totals. For project 2, I will analyze proposal data from 2018 to October 2020 from the university along with the corresponding prospect data. By learning more about our donors and our proposals, we can glean insights about the best way to fundraise for the university in the future. In this project, I will look for correlations between different proposal data points and project whether or not the university will meet or exceed our fundraising goal for the year. 
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Definitions
 
-```markdown
-Syntax highlighted code block
+Philanthropy at GW is of critical importance to sustain programming, fund research, provide scholarships to students, and build the future of the university. Within the Division of Development and Alumni Relations (DAR) at GW, it is our responsibility to raise funds from our community to support these initiatives. Major Gift Officers (MGOs) are hired by the university to cultivate relationships with prospects and provide them with funding opportunities within the university. Prospects at GW are defined as the alumni, parents, faculty, friends, and organizations that have the capacity and inclination to give a major gift to the university. When an MGO has identified a funding opportunity for the prospect, they will enter a proposal into our donor database (Ellucian Advance). The proposal is essentially a documented plan in our donor database of when the MGO will ask their assigned prospect and for what initiative. After the solicitation occurs, the proposal is updated to document this ask, and when the donor decides to give, the result is documented as well.
+ 
 
-# Header 1
-## Header 2
-### Header 3
+### Key Findings
 
-- Bulleted
-- List
+When analyzing our prospect data, unsurprisingly, we found that a majority of our prospects live in the DMV nearby the university, as well as in states with major urban areas, such as New York and California. Similarly unsurprising, a majority of the prospects are alumni, with a majority of our alumni having graduated from the largest school in the university, the Columbian College of Arts and Sciences. What was surprising, however, is how some class years were significantly more "generous" than others. When analyzing all three philanthropic capacity ratings, we found a majority of our major gift prospects from the last few years had a major gift capacity around $100K - $249K, with only a handful of our prospects having the capacity to give $1M+. 
 
-1. Numbered
-2. List
+When analyzing the proposal data, a majority of the proposals were closed, which was to be expected. Given the Proposal Stages are so connected to the Proposal Status, it was also expected that a majority of the proposals would be Ask Declined or Ask Accepted. Since proposals are closed as "Withdrawn" from the donor database when they are still in the Clearance stage, I found that just under half of the Clearance proposals had been Withdrawn and were no longer planned solicitations. When looking at the open, active proposals, more than half of the proposals were yet to be solicited, which makes sense given we are less than half of the way through the fiscal year. Next, we looked at what these proposals were for by analyzing the distribution of the beneficiary schools and units. Additionally, I created a wordcloud of proposal titles to discover trends, removing any common proposal terms that did not accurately describe the allocation. I was heartened to see some of the most common words aligned with scholarships and research, as these are two important funding areas for the university. 
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/e-roberts/eroberts22-project2/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Next, I did some analysis of the four proposal amounts: Anticipated Ask Amounts, Ask Amounts, Expected Amounts, and the Results. When calculating the mean, median, and mode for each of these proposal amounts, we can see how each of these amounts vary dramatically over the lifetime of the proposal. While the average Anticipated Ask Amount is $253K, the average Ask Amount is $202K  and the average Expected Amount is $200K. When analyzing the Result, I had to subset the data to only Ask Accepted proposals, as all other Proposal Stages had a Result of $0 which ended up skewing the data. The average Result of the Ask Accepted proposals, was much lower at $118K. The modes of the proposal amounts also told an interesting story. While most proposals start at a high level, over the lifetime of the proposal, they begin to decrease, as the mode of the Ask Amounts and the mode of the Expected Amounts are significantly smaller. The mode of the Results of the Ask Accepted Proposals was the smallest, at just $5K. The strongest correlation was between the Anticipated Ask Amounts and the Ask Amounts, which is exactly what we would hope to see, as we would like the MGOs to ask for the amount they had initially anticipated. The correlation is less strong with the Expected Amounts, as generally we tend to expect the prospect will give less than we ask for. Finally, based on the Conservative Attainment projection analysis, we will not meet our fundraising goal for this fiscal year, but will actually raise approximately $49M less than we had hoped for. Based on our Optimistic Attainment projection, however, we will raise $49M more than our fundraising goal for the fiscal year. 
